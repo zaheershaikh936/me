@@ -1,40 +1,21 @@
 //import logo from './logo.svg';
+import React from "react";
+
 import "./App.css";
-import Header from "./Header";
-import Body from "./Body";
-import Footer from "./Footer";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Treatments from "./Treatments";
-import CustomerReview from "./CustomerReview";
-import Features from "./Features";
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <Body />,
-    children: [
-      {
-        path: "/",
-        element: <Treatments />,
-      },
-      {
-        path: "features",
-        element: <Features />,
-      },
-      {
-        path: "customer",
-        element: <CustomerReview />,
-      },
-    ],
-  },
-]);
+import Treatments from './Treatments';
+import Header from './Header';
+import Footer from './Footer';
+
+
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <RouterProvider router={appRouter}></RouterProvider>
+    <React.StrictMode>
+      <Header/>
+      <Treatments />
       <Footer />
-    </div>
+    </React.StrictMode>
   );
 }
-
 export default App;
+
+
